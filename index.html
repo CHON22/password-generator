@@ -4,13 +4,37 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Passwort Generator</title>
     <script defer src="./build/bundle.js"></script>
 </head>
 
 <body>
-    <my-beispiel></my-beispiel>
-    <input type="text" id="myInput" />
-</body>
-
-</html>
+    <div class="container">
+        <h1 class="title">Passwort Generator</h1>
+        <h3 class="password-display">
+        </h3>    
+        <form id="passwordGeneratorForm" class="form">
+          <label for="characterAmountNumber">Passwortlänge</label>
+          <div class="character-amount-container">
+            <input type="range" min="1" max="30" value="18" id="characterAmountRange">
+            <input class="number-input" type="number" min="1" max="30" value="18" id="characterAmountNumber">
+          </div>
+    
+          <label for="includeLowercase">Kleinbuchstaben</label>
+          <input checked type="checkbox" id="includeLowercase">
+    
+          <label for="includeUppercase">Großbuchstaben</label>
+          <input checked type="checkbox" id="includeUppercase">
+    
+          <label for="includeNumbers">Nummern</label>
+          <input checked type="checkbox" id="includeNumbers">
+    
+          <label for="includeSymbols">Sonderzeichen</label>
+          <input checked type="checkbox" id="includeSymbols">
+    
+          <button type="submit" class="btn">Passwort generieren</button>
+        </form>
+      </div>
+    </body>
+    
+    </html>
