@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Passwort Generator</title>
     <script defer src="./build/bundle.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
 </head>
 
 <body>
     <div class="container">
         <h1 class="title">Passwort Generator</h1>
         <h3 class="password-display">
+          <span id="copyButton" class="material-symbols-outlined copy-icon">content_copy</span>
+          <p id="passwordDisplay"></p>
         </h3>    
         <form id="passwordGeneratorForm" class="form">
           <label for="characterAmountNumber">Passwortlänge</label>
