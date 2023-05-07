@@ -8,3 +8,11 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
 ).concat(
   arrayFromLowToHigh(123, 126)
 )
+
+function arrayFromLowToHigh(low: number, high: number) {
+    const array = []
+    for (let i = low; i <= high; i++) {
+      array.push(i)
+    }
+    return array
+  }
