@@ -85,3 +85,8 @@ body {
     cursor: pointer;
     height: 60px;
   }
+
+  .btn:hover{
+    background-color: #3b73ce;
+  }
+  
