@@ -1,3 +1,6 @@
+import { generatePassword } from "./passwordGenerator"
+import { isInputElement } from "./utils"
+
 const characterAmountRangeElement = document.getElementById('characterAmountRange')
 const characterAmountNumberElement = document.getElementById('characterAmountNumber')
 const includeLowercaseElement = document.getElementById('includeLowercase')
@@ -8,6 +11,10 @@ const includeSymbolsElement = document.getElementById('includeSymbols')
 const formElement = document.getElementById('passwordGeneratorForm')
 const passwordDisplayElement = document.getElementById('passwordDisplay')
 const copyButtonElement = document.querySelector('#copyButton')
+
+
+  
+  
 
 
 
