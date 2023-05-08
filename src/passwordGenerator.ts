@@ -16,3 +16,26 @@ function arrayFromLowToHigh(low: number, high: number) {
     }
     return array
   }
+
+  type PasswordOptions = {
+    characterAmount: number
+    includeLowercase: boolean
+    includeUppercase: boolean
+    includeNumbers: boolean
+    includeSymbols: boolean
+  }
+
+export function generatePassword({ characterAmount, includeUppercase, includeLowercase, includeNumbers, includeSymbols }: PasswordOptions) {
+    let charCodes: number[] = []
+    if (includeLowercase) charCodes = charCodes.concat(LOWERCASE_CHAR_CODES)
+    if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+    
+    const passwordCharacters = []
+    for (let i = 0; i < characterAmount; i++) {
+      const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+      passwordCharacters.push(String.fromCharCode(characterCode))
+    }
+    return passwordCharacters.join('')
+  }
