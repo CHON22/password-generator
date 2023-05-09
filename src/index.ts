@@ -57,6 +57,10 @@ function syncCharacterAmount(e: HTMLElementEventMap["input"]) {
     copyToClipboard(passwordDisplayElement?.innerText);
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    handleGeneratePassword();
+  });
+
   
   
 
