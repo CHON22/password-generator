@@ -1,6 +1,9 @@
+
+//Import der Module 
 import { generatePassword } from "./passwordGenerator"
 import { isInputElement } from "./utils"
 
+//Deklaration und Initalisierung der Variablen
 const characterAmountRangeElement = document.getElementById('characterAmountRange')
 const characterAmountNumberElement = document.getElementById('characterAmountNumber')
 const includeLowercaseElement = document.getElementById('includeLowercase')
@@ -12,14 +15,18 @@ const formElement = document.getElementById('passwordGeneratorForm')
 const passwordDisplayElement = document.getElementById('passwordDisplay')
 const copyButtonElement = document.querySelector('#copyButton')
 
+//Event-Listener für 'input' hinzufügen
 characterAmountNumberElement?.addEventListener('input', syncCharacterAmount)
 characterAmountRangeElement?.addEventListener('input', syncCharacterAmount)
 
+
+//Event-Listener für 'submit' hinzufügen
 formElement?.addEventListener('submit', e => {
   e.preventDefault()
   handleGeneratePassword()
 })
 
+//Funktion zur Generierung des Passworts
 function handleGeneratePassword() {
   const characterAmountString = isInputElement(characterAmountNumberElement) ? characterAmountNumberElement.value : "10"
   const characterAmount = parseInt(characterAmountString)
@@ -32,6 +39,7 @@ function handleGeneratePassword() {
   if (passwordDisplayElement) passwordDisplayElement.innerText = password
 }
 
+//Synchronisierung der Zeichenmenge 
 function syncCharacterAmount(e: HTMLElementEventMap["input"]) {
     if (!isInputElement(e.target)) {
       return 
@@ -41,6 +49,7 @@ function syncCharacterAmount(e: HTMLElementEventMap["input"]) {
     if (isInputElement(characterAmountRangeElement)) characterAmountRangeElement.value = value
   }
 
+  //Kopieren des Textes in die Zwischenablage 
   function copyToClipboard(text: string | undefined) {
     if (!text) {
       return 
@@ -53,10 +62,12 @@ function syncCharacterAmount(e: HTMLElementEventMap["input"]) {
     textarea.remove()
   }
 
+  //Event-Listener für das Kopieren des Passworts
   copyButtonElement?.addEventListener("click", function() {
     copyToClipboard(passwordDisplayElement?.innerText);
   });
 
+  //Event-Listener für das Laden der Seite
   document.addEventListener('DOMContentLoaded', function() {
     handleGeneratePassword();
   });
