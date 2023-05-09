@@ -53,6 +53,10 @@ function syncCharacterAmount(e: HTMLElementEventMap["input"]) {
     textarea.remove()
   }
 
+  copyButtonElement?.addEventListener("click", function() {
+    copyToClipboard(passwordDisplayElement?.innerText);
+  });
+
   
   
 
