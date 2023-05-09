@@ -26,7 +26,7 @@ formElement?.addEventListener('submit', e => {
   handleGeneratePassword()
 })
 
-//Funktion zur Generierung des Passworts
+//Funktion zur Überpüfung der Eingabewerte
 function handleGeneratePassword() {
   const characterAmountString = isInputElement(characterAmountNumberElement) ? characterAmountNumberElement.value : "10"
   const characterAmount = parseInt(characterAmountString)
