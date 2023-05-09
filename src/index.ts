@@ -41,6 +41,17 @@ function syncCharacterAmount(e: HTMLElementEventMap["input"]) {
     if (isInputElement(characterAmountRangeElement)) characterAmountRangeElement.value = value
   }
 
+  function copyToClipboard(text: string | undefined) {
+    if (!text) {
+      return 
+    }
+    const textarea = document.createElement('textarea')
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    textarea.remove()
+  }
 
   
   
