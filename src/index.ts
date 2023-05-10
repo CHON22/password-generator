@@ -3,7 +3,7 @@
 import { generatePassword } from "./passwordGenerator"
 import { isInputElement } from "./utils"
 
-//Deklaration und Initalisierung der Variablen
+//Deklaration und Initialisierung der Variablen
 const characterAmountRangeElement = document.getElementById('characterAmountRange')
 const characterAmountNumberElement = document.getElementById('characterAmountNumber')
 const includeLowercaseElement = document.getElementById('includeLowercase')
@@ -32,7 +32,6 @@ function handleGeneratePassword() {
   const characterAmount = parseInt(characterAmountString)
   const includeUppercase = isInputElement(includeUppercaseElement) ? includeUppercaseElement.checked : false
   const includeLowercase = isInputElement(includeLowercaseElement) ? includeLowercaseElement.checked : false
-
   const includeNumbers = isInputElement(includeNumbersElement) ? includeNumbersElement.checked : false
   const includeSymbols = isInputElement(includeSymbolsElement) ? includeSymbolsElement.checked : false
   const password = generatePassword({ characterAmount, includeLowercase, includeUppercase, includeNumbers, includeSymbols })
